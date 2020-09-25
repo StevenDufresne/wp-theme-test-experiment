@@ -31,4 +31,4 @@ jobs:
       - name: Test Theme
         uses: StevenDufresne/wp-structure-validator@main
         with:
-          root-folder: test-theme 
+          root-folder: test-theme/astra
