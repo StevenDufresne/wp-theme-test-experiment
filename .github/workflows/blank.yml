@@ -21,6 +21,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       ##- uses: actions/checkout@v2
+      - name: Download folder
+        run: curl -o theme.zip "https://downloads.wordpress.org/theme/astra.2.5.5.zip" | unzip theme.zip
+        with:
+          root-folder: ./astra 
 
       - name: Test Theme
         uses: StevenDufresne/wp-structure-validator@main
