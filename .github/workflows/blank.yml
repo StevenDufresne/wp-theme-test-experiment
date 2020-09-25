@@ -25,9 +25,7 @@ jobs:
         run: |
           curl -o theme.zip "https://downloads.wordpress.org/theme/twentysixteen.2.2.zip" 
           unzip theme.zip
-          
-      - run: ls -al
-        
+
       - name: Test Theme
         uses: StevenDufresne/wp-theme-validation-action-experiment@main
         with:
