@@ -25,6 +25,8 @@ jobs:
         run: |
           curl -o theme.zip "https://downloads.wordpress.org/theme/astra.2.5.5.zip" 
           unzip -d ./ theme.zip
+          
+      - run: ls -al
         
       - name: Test Theme
         uses: StevenDufresne/wp-structure-validator@main
