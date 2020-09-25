@@ -29,6 +29,6 @@ jobs:
       - run: ls -al
         
       - name: Test Theme
-        uses: StevenDufresne/wp-structure-validator@main
+        uses: StevenDufresne/wp-theme-validation-action-experiment@main
         with:
           root-folder: twentysixteen  
