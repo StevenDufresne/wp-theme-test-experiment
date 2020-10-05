@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: Download Theme
         run: |
-          curl -o theme.zip "https://downloads.wordpress.org/theme/twentysixteen.2.2.zip" 
+          curl -o theme.zip "https://downloads.wordpress.org/theme/supermarket.1.0.3.zip" 
           unzip theme.zip
 
       - name: Test Theme
         uses: StevenDufresne/wp-theme-validation-action-experiment@main
         with:
-          root-folder: twentysixteen  
+          root-folder: supermarket  
