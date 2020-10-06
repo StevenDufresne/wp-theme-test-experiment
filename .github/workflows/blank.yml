@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: Download Theme
         run: |
-          curl -o theme.zip "https://downloads.wordpress.org/theme/catch-revolution.1.0.zip" 
+          curl -o theme.zip "https://downloads.wordpress.org/theme/colibri-wp.1.0.80.zip" 
           unzip theme.zip
 
       - name: Test Theme
         uses: StevenDufresne/wp-theme-validation-action-experiment@main
         with:
-          root-folder: catch-revolution  
+          root-folder: colibri-wp 
