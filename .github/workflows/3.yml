@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: Download Theme
         run: |
-          curl -o theme.zip "https://wordpress.org/themes/download/brosil.1.0.0.zip" 
+          curl -o theme.zip "https://downloads.wordpress.org/theme/newsberg.1.1.zip" 
           unzip theme.zip
 
       - name: Test Theme
         uses: StevenDufresne/wp-theme-validation-action-experiment@main
         with:
-          root-folder: brosil
+          root-folder: newsberg

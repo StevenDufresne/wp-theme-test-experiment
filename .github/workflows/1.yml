@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: Download Theme
         run: |
-          curl -o theme.zip "https://wordpress.org/themes/download/brooklyn-lite.1.0.2.zip" 
+          curl -o theme.zip "https://downloads.wordpress.org/theme/hestia.3.0.5.zip" 
           unzip theme.zip
 
       - name: Test Theme
         uses: StevenDufresne/wp-theme-validation-action-experiment@main
         with:
-          root-folder: brooklyn-lite
+          root-folder: hestia
