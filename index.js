@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Download Theme
         run: |
-          curl -o theme.zip "{{themeUrl}}"
+          curl -o -L theme.zip "{{themeUrl}}"
           unzip theme.zip
       - name: Test My Theme
         uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
