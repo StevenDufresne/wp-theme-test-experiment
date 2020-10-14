@@ -14,5 +14,11 @@ module.exports = [
     {
         name: 'ratio-lite',
         url: 'https://wordpress.org/themes/download/ratio-lite.1.3.zip'
-    }
+    },
+    {
+        name: 'storefront',
+        url: 'https://downloads.wordpress.org/theme/storefront.2.8.0.zip'
+    },
+
+    
 ];
