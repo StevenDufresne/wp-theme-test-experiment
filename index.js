@@ -1,17 +1,10 @@
 const execSync = require('child_process').execSync;
 const fs = require('fs');
 const util = require('util');
+const themes = require('./themes.js');
 
 const writeFile = util.promisify(fs.writeFile);
 const githubFolder = '.github/workflows';
-
-const runCommand = (command) => {
-	const output = execSync(command, { encoding: 'utf-8' });
-	console.log('Output was:\n', output);
-};
-
-runCommand(`rm -rf ${githubFolder}`);
-runCommand(`mkdir ${githubFolder}`);
 
 const template = `
 ## Create yml files
@@ -39,30 +32,30 @@ jobs:
           accessible-ready: false
 `;
 
-const testThemes = [
-	{
-		name: 'colibri-wp',
-		url: 'https://downloads.wordpress.org/theme/colibri-wp.1.0.80.zip',
-    },
-    {
-		name: 'twentyfifteen',
-		url: 'https://downloads.wordpress.org/theme/twentyfifteen.2.7.zip',
-	},
-];
+
+const runCommand = (command) => {
+	execSync(command, { encoding: 'utf-8' });
+};
 
 const runUpdate = async () => {
-	for (let i = 0; i < testThemes.length; i++) {
-		const name = testThemes[i].name;
-		const url = testThemes[i].url;
+	for (let i = 0; i < themes.length; i++) {
+		const name = themes[i].name;
+        const url = themes[i].url;
+        const fileName = `${githubFolder}/${name}.yml`;
 
 		const hydrateTemplate = template
 			.replace(/{{themeName}}/gi, name)
-			.replace(/{{themeUrl}}/gi, url);
+            .replace(/{{themeUrl}}/gi, url);
+            
 
-		await writeFile(`${githubFolder}/${name}.yml`, hydrateTemplate, 'utf8', () => {
-			console.log('done');
-		});
+        console.log('Creating an config file', fileName);
+		writeFile(fileName, hydrateTemplate, 'utf8', () => {
+            console.log(`Completed writing ${fileName}`);
+        });
 	}
 };
 
+
+runCommand(`rm -rf ${githubFolder}`);
+runCommand(`mkdir ${githubFolder}`);
 runUpdate();
