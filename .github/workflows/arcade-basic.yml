@@ -1,0 +1,24 @@
+
+## Create yml files
+name: arcade-basic Theme Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Theme
+        run: |
+          curl -o theme.zip "https://wordpress.org/themes/download/arcade-basic.1.1.2.zip"
+          unzip theme.zip
+      - name: Test My Theme
+        uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
+        with:
+          root-folder: arcade-basic
+          accessible-ready: false
