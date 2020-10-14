@@ -1,0 +1,24 @@
+
+## Create yml files
+name: vilva Theme Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Theme
+        run: |
+          curl -L -o theme.zip "https://downloads.wordpress.org/theme/vilva.1.0.8.zip"
+          unzip theme.zip
+      - name: Test My Theme
+        uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
+        with:
+          root-folder: vilva
+          accessible-ready: false

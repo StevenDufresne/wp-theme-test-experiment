@@ -1,0 +1,24 @@
+
+## Create yml files
+name: catch-revolution Theme Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Theme
+        run: |
+          curl -L -o theme.zip "https://downloads.wordpress.org/theme/catch-revolution.1.0.zip"
+          unzip theme.zip
+      - name: Test My Theme
+        uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
+        with:
+          root-folder: catch-revolution
+          accessible-ready: false

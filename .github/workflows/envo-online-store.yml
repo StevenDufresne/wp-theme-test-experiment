@@ -1,0 +1,24 @@
+
+## Create yml files
+name: envo-online-store Theme Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Theme
+        run: |
+          curl -L -o theme.zip "https://downloads.wordpress.org/theme/envo-online-store.1.0.4.zip"
+          unzip theme.zip
+      - name: Test My Theme
+        uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
+        with:
+          root-folder: envo-online-store
+          accessible-ready: false
