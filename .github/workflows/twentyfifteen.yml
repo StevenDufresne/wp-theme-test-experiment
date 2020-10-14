@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Download Theme
         run: |
-          curl -o -L theme.zip "https://downloads.wordpress.org/theme/twentyfifteen.2.7.zip"
+          curl -L -o theme.zip "https://downloads.wordpress.org/theme/twentyfifteen.2.7.zip"
           unzip theme.zip
       - name: Test My Theme
         uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
