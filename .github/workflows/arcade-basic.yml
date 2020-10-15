@@ -22,9 +22,9 @@ jobs:
           unzip theme.zip
       - name: Test My Theme
         env: 
-          ACTIONS_RUNTIME_URL: ${{ ACTIONS_RUNTIME_URL }}
-          ACTIONS_CACHE_URL: ${{ ACTIONS_RUNTIME_URL }}
-          ACTIONS_RUNTIME_TOKEN: ${{ ACTIONS_RUNTIME_URL }}
+          ACTIONS_RUNTIME_URL: ${{ process.env.ACTIONS_RUNTIME_URL }}
+          ACTIONS_CACHE_URL: ${{ process.env.ACTIONS_RUNTIME_URL }}
+          ACTIONS_RUNTIME_TOKEN: ${{ process.env.ACTIONS_RUNTIME_URL }}
         uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
         with:
           root-folder: arcade-basic
