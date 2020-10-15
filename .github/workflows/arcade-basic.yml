@@ -29,4 +29,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: ${{ steps.test.outputs.screenshots }/actions/ui-check
+          path: ${{ steps.test.outputs.screenshots }}/actions/ui-check
