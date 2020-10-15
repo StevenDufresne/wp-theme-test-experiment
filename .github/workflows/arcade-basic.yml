@@ -27,4 +27,4 @@ jobs:
           root-folder: arcade-basic
           accessible-ready: false
       - name: Find Folder
-        run: echo "The location is ${{ toJson( steps.test.outputs) }}"
+        run: echo "The location is ${{ steps.test.outputs.screenshots }}"
