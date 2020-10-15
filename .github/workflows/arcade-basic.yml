@@ -21,6 +21,10 @@ jobs:
           curl -L -o theme.zip "https://wordpress.org/themes/download/arcade-basic.1.1.2.zip"
           unzip theme.zip
       - name: Test My Theme
+        env: 
+          ACTIONS_RUNTIME_URL: "seomting"
+          ACTIONS_CACHE_URL: "another thing"
+          ACTIONS_RUNTIME_TOKEN: "again"
         uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
         with:
           root-folder: arcade-basic
