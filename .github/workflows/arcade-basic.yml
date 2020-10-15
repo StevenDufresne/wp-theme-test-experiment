@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: hmarr/debug-action@master
+        
       - name: Download Theme
         run: |
           curl -L -o theme.zip "https://wordpress.org/themes/download/arcade-basic.1.1.2.zip"
