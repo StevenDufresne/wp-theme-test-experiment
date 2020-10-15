@@ -26,5 +26,7 @@ jobs:
         with:
           root-folder: arcade-basic
           accessible-ready: false
-      - name: Find Folder
-        run: echo "The location is ${{ steps.test.outputs.screenshots }}"
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: ${{ steps.test.outputs.screenshots }/actions/ui-check
