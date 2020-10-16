@@ -26,4 +26,3 @@ jobs:
         with:
           name: screenshots
           path: ${{ steps.test.outputs.screenshots }}
-  
