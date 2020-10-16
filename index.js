@@ -30,6 +30,11 @@ jobs:
         with:
           root-folder: {{themeName}}
           accessible-ready: false
+      - uses: actions/upload-artifact@v2
+        with:
+         name: screenshots
+         path: {{screenShotLocation}} 
+  
 `;
 
 
@@ -45,8 +50,8 @@ const runUpdate = async () => {
 
 		const hydrateTemplate = template
 			.replace(/{{themeName}}/gi, name)
-            .replace(/{{themeUrl}}/gi, url);
-            
+            .replace(/{{themeUrl}}/gi, url)
+            .replace(/{{screenShotLocation}}/gi, '${{ steps.test.outputs.screenshots }}');
 
         console.log('Creating an config file', fileName);
 		writeFile(fileName, hydrateTemplate, 'utf8', () => {

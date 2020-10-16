@@ -18,12 +18,12 @@ jobs:
           curl -L -o theme.zip "https://wordpress.org/themes/download/arcade-basic.1.1.2.zip"
           unzip theme.zip
       - name: Test My Theme
-        id: test
         uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
         with:
           root-folder: arcade-basic
           accessible-ready: false
       - uses: actions/upload-artifact@v2
         with:
-          name: screenshots
-          path: ${{ steps.test.outputs.screenshots }}
+         name: screenshots
+         path: ${{ steps.test.outputs.screenshots }} 
+  
