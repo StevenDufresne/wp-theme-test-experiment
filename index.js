@@ -32,8 +32,8 @@ jobs:
           accessible-ready: false
       - uses: actions/upload-artifact@v2
         with:
-         name: screenshots
-         path: {{screenShotLocation}} 
+          name: screenshots
+          path: {{screenShotLocation}} 
   
 `;
 
