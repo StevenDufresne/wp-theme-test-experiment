@@ -30,10 +30,10 @@ jobs:
         with:
           root-folder: {{themeName}}
           accessible-ready: false
-      - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v2
         with:
           name: screenshots
-          path: {{screenShotLocation}} 
+          path: {{screenShotLocation}}
   
 `;
 

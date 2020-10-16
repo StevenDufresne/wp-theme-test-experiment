@@ -22,8 +22,8 @@ jobs:
         with:
           root-folder: twentyfifteen
           accessible-ready: false
-      - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v2
         with:
           name: screenshots
-          path: ${{ steps.test.outputs.screenshots }} 
+          path: ${{ steps.test.outputs.screenshots }}
   
