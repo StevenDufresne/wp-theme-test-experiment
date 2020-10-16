@@ -33,7 +33,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: screenshots
-          path: {{screenShotLocation}} 
+          path: {{screenShotLocation}}
   
 `;
 
