@@ -18,6 +18,7 @@ jobs:
           curl -L -o theme.zip "https://downloads.wordpress.org/theme/colibri-wp.1.0.80.zip"
           unzip theme.zip
       - name: Test My Theme
+        id: test
         uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
         with:
           root-folder: colibri-wp
@@ -26,4 +27,3 @@ jobs:
         with:
           name: screenshots
           path: ${{ steps.test.outputs.screenshots }}
-  

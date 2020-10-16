@@ -26,6 +26,7 @@ jobs:
           curl -L -o theme.zip "{{themeUrl}}"
           unzip theme.zip
       - name: Test My Theme
+        id: test
         uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
         with:
           root-folder: {{themeName}}
@@ -34,7 +35,6 @@ jobs:
         with:
           name: screenshots
           path: {{screenShotLocation}}
-  
 `;
 
 
