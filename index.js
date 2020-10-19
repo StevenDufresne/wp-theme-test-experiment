@@ -27,7 +27,7 @@ jobs:
           unzip theme.zip
       - name: Test My Theme
         id: test
-        uses: StevenDufresne/wp-theme-validation-action-experiment@master
+        uses: StevenDufresne/wp-theme-validation-action-experiment@main
         with:
           root-folder: {{themeName}}
           accessible-ready: true
