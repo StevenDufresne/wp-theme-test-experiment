@@ -27,9 +27,10 @@ jobs:
           unzip theme.zip
       - name: Test My Theme
         id: test
-        uses: tellyworth/wp-theme-validation-action-experiment@add/page-tests
+        uses: StevenDufresne/wp-theme-validation-action-experiment@master
         with:
           root-folder: {{themeName}}
+          accessible-ready: true
       - uses: actions/upload-artifact@v2
         with:
           name: screenshots
