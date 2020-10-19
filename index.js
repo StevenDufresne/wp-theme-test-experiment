@@ -30,7 +30,6 @@ jobs:
         uses: tellyworth/wp-theme-validation-action-experiment@add/page-tests
         with:
           root-folder: {{themeName}}
-          accessible-ready: false
       - uses: actions/upload-artifact@v2
         with:
           name: screenshots
