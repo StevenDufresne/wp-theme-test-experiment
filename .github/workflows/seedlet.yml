@@ -1,0 +1,29 @@
+
+## Create yml files
+name: seedlet Theme Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Theme
+        run: |
+          curl -L -o theme.zip "https://downloads.wordpress.org/theme/seedlet.1.1.1.zip"
+          unzip theme.zip
+      - name: Test My Theme
+        id: test
+        uses: StevenDufresne/wp-theme-validation-action-experiment@main
+        with:
+          root-folder: seedlet
+          accessible-ready: true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: ${{ steps.test.outputs.screenshots }}

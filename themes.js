@@ -56,5 +56,11 @@ module.exports = [
 	{
 		name: 'catch-revolution',
 		url: 'https://downloads.wordpress.org/theme/catch-revolution.1.0.zip',
-	},
+    },
+	{
+		name: 'seedlet',
+		url: 'https://downloads.wordpress.org/theme/seedlet.1.1.1.zip',
+    },
+    
+    
 ];
