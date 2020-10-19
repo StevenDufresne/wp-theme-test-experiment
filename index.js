@@ -27,7 +27,7 @@ jobs:
           unzip theme.zip
       - name: Test My Theme
         id: test
-        uses: StevenDufresne/wp-theme-validation-action-experiment@add/keyboard-test
+        uses: tellyworth/wp-theme-validation-action-experiment@add/page-tests
         with:
           root-folder: {{themeName}}
           accessible-ready: false
